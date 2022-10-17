@@ -24,7 +24,7 @@ RUN npm i
 # install prod dependencies for sui2/live-server
 WORKDIR /app/live-server
 ADD live-server/package.json ./
-RUN npm i --omit=dev
+RUN npm i --omit=build
 
 # add all files
 ADD . /app
