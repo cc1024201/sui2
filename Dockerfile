@@ -30,7 +30,7 @@ RUN npm i --omit=dev
 ADD . /app
 
 # copy editor dist from the last image
-COPY --from=0 /live-server/editor/dist ./editor/dist
+# COPY --from=0 /live-server/editor/dist ./editor/dist
 
 ENV DATA_DIR /data
 CMD ["node", "app.js"]
