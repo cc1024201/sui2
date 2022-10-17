@@ -24,13 +24,13 @@ RUN npm i
 # install prod dependencies for sui2/live-server
 WORKDIR /app/live-server
 ADD live-server/package.json ./
-RUN npm i --omit=build
+RUN npm i --omit=dev
 
 # add all files
 ADD . /app
 
 # copy editor dist from the last image
-# COPY --from=0 /live-server/editor/dist ./editor/dist
+COPY --from=0 /live-server/editor/dist ./editor/dist
 
 ENV DATA_DIR /data
 CMD ["node", "app.js"]
